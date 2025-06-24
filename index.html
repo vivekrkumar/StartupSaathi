@@ -15,10 +15,46 @@
         }
         .slide-content {
             display: none; /* Hide all slides by default */
+            opacity: 0; /* Start hidden for animation */
+            transform: translateY(20px); /* Start slightly below for slide-in */
+            animation: slideInContent 0.5s ease-out forwards; /* Base animation for content */
         }
         .slide-content.active {
             display: block; /* Show active slide */
+            opacity: 1; /* Ensure visible state for active */
+            transform: translateY(0); /* Ensure visible state for active */
         }
+
+        /* Keyframes for overall slide content entrance */
+        @keyframes slideInContent {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Keyframes for individual tiles/list items flying in */
+        @keyframes flyInItem {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Class to apply for staggered animation */
+        .animate-fly-in {
+            opacity: 0; /* Hidden by default until animation starts */
+            animation: flyInItem 0.4s ease-out forwards;
+        }
+
         /* Custom scrollbar for better aesthetics */
         ::-webkit-scrollbar {
             width: 8px;
@@ -210,21 +246,21 @@
                     <div>
                         <h3 class="text-2xl font-bold text-purple-700 mb-3">1. Startup Registration & Compliance:</h3>
                         <ul class="list-disc list-inside text-lg text-gray-700 space-y-2 pl-4">
-                            <li>Tech platform for company registration (Pvt Ltd, LLP), DPIIT recognition.</li>
-                            <li>Name, Brand, Domain, and Bank Account Availability Checks.</li>
-                            <li>Assistance with Sector-specific and State-specific registrations.</li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.1s;">Tech platform for company registration (Pvt Ltd, LLP), DPIIT recognition.</span></li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.2s;">Name, Brand, Domain, and Bank Account Availability Checks.</span></li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.3s;">Assistance with Sector-specific and State-specific registrations.</span></li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold text-purple-700 mb-3">2. Intellectual Property & Brand Checks:</h3>
                         <ul class="list-disc list-inside text-lg text-gray-700 space-y-2 pl-4">
-                            <li>Comprehensive checks for trademark, domain, and brand name availability to secure your identity.</li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.4s;">Comprehensive checks for trademark, domain, and brand name availability to secure your identity.</span></li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold text-purple-700 mb-3">3. Capital Allocation Guidance:</h3>
                         <ul class="list-disc list-inside text-lg text-gray-700 space-y-2 pl-4">
-                            <li>Tools and resources for strategic capital deployment within your startup.</li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.5s;">Tools and resources for strategic capital deployment within your startup.</span></li>
                         </ul>
                     </div>
                 </div>
@@ -240,34 +276,52 @@
                     <div>
                         <h3 class="text-2xl font-bold text-purple-700 mb-3">1. Intelligent Funding Matchmaking:</h3>
                         <ul class="list-disc list-inside text-lg text-gray-700 space-y-2 pl-4">
-                            <li>Matching startups with relevant investors (Govt. funds, State Govt. schemes, Incubators, Angels, VCs) based on:
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.1s;">Matching startups with relevant investors (Govt. funds, State Govt. schemes, Incubators, Angels, VCs) based on:</span>
                                 <ul class="list-circle list-inside ml-6 mt-1">
-                                    <li>Nature of Startup (Sector, Innovation)</li>
-                                    <li>Stage (Seed, Early, Growth)</li>
-                                    <li>Funding Needs & Criteria</li>
+                                    <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.2s;">Nature of Startup (Sector, Innovation)</span></li>
+                                    <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.3s;">Stage (Seed, Early, Growth)</span></li>
+                                    <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.4s;">Funding Needs & Criteria</span></li>
                                 </ul>
                             </li>
-                            <li><strong class="text-purple-600">Capital Raise Calculators:</strong> Tools for Equity, Convertible Debentures, and Dilution analysis.</li>
+                            <li class="py-1 mt-4"><span class="block animate-fly-in" style="animation-delay: 0.5s;"><strong class="text-purple-600">Key Indian Funding Options:</strong></span>
+                                <ul class="list-disc list-inside ml-6 mt-1">
+                                    <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.6s;"><strong class="text-blue-700">Government Schemes:</strong>
+                                        <ul class="list-circle list-inside ml-6">
+                                            <li>Startup India Seed Fund Scheme (SISFS): Up to ₹20 Lakhs as grant for PoC/prototype; up to ₹50 Lakhs investment via convertible debentures/debt for market entry/scaling. Disbursed through incubators.</li>
+                                            <li>Credit Guarantee Scheme for Startups (CGSS): Loan guarantees up to ₹5 crore from banks, with up to 80% guarantee.</li>
+                                            <li>Atal Innovation Mission (AIM): Grants up to ₹10 crore for innovative solutions in healthcare, education, agriculture. Includes support for Atal Tinkering Labs (ATLs) and Atal Incubation Centers (AICs).</li>
+                                            <li>Fund of Funds for Startups (FFS): ₹10,000 crore corpus managed by SIDBI, investing in SEBI-registered Alternative Investment Funds (AIFs) which then invest in startups.</li>
+                                            <li>Stand-Up India Scheme: Facilitates bank loans from ₹10 lakh to ₹1 crore for SC/ST and women entrepreneurs for greenfield projects.</li>
+                                            <li>NIDHI Programme (National Initiative for Developing and Harnessing Innovations): Various components (e.g., NIDHI-SSS, NIDHI-PRAYAS) provide grants and support via Technology Business Incubators (TBIs) across different stages of innovation.</li>
+                                        </ul>
+                                    </li>
+                                    <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.7s;"><strong class="text-orange-700">State Government Policies:</strong> Many states (e.g., Karnataka, Assam, Gujarat) have their own startup policies offering grants, matching funds, and infrastructure support to incubators and startups.</span></li>
+                                    <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.8s;"><strong class="text-purple-700">Incubators & Accelerators:</strong> Over 979 incubators & accelerators in India provide seed funding (e.g., Axilor Ventures: $500k-$750k per startup), mentorship, and networking (e.g., Indian Angel Network, Venture Catalysts, India Accelerator).</span></li>
+                                    <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.9s;"><strong class="text-green-700">Angel Investors & Networks:</strong> High-net-worth individuals and networks (e.g., Indian Angel Network, LetsVenture, Mumbai Angels) providing early-stage capital (typically $100k-$1M) and mentorship.</span></li>
+                                    <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 1.0s;"><strong class="text-red-700">Venture Capital (VC) Firms:</strong> Focus on early to growth-stage investments (Series A onwards). Diverse focus sectors including FinTech, SaaS, HealthTech, AI, Consumer Tech (e.g., Sequoia India, Blume Ventures, Elevation Capital).</span></li>
+                                </ul>
+                            </li>
+                            <li class="py-1 mt-4"><span class="block animate-fly-in" style="animation-delay: 1.1s;"><strong class="text-purple-600">Capital Raise Calculators:</strong> Tools for Equity, Convertible Debentures, and Dilution analysis.</span></li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold text-purple-700 mb-3">2. Dynamic Compliance Calendar:</h3>
                         <ul class="list-disc list-inside text-lg text-gray-700 space-y-2 pl-4">
-                            <li>Personalized, automated reminders for all critical filing dates: GST, Income Tax, PF, ESIC, ROC, and other sector/state-specific regulations.</li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 1.2s;">Personalized, automated reminders for all critical filing dates: GST, Income Tax, PF, ESIC, ROC, and other sector/state-specific regulations.</span></li>
                             <li><div class="calendar-grid mt-4">
-                                <div class="calendar-item">
+                                <div class="calendar-item animate-fly-in" style="animation-delay: 1.3s;">
                                     <h4 class="font-semibold text-gray-700">GST Filing (GSTR-3B)</h4>
                                     <p class="text-sm text-gray-500">20th of next month</p>
                                 </div>
-                                <div class="calendar-item">
+                                <div class="calendar-item animate-fly-in" style="animation-delay: 1.4s;">
                                     <h4 class="font-semibold text-gray-700">TDS/TCS Deposit</h4>
                                     <p class="text-sm text-gray-500">7th of next month</p>
                                 </div>
-                                <div class="calendar-item">
+                                <div class="calendar-item animate-fly-in" style="animation-delay: 1.5s;">
                                     <h4 class="font-semibold text-gray-700">PF Challan Payment</h4>
                                     <p class="text-sm text-gray-500">15th of next month</p>
                                 </div>
-                                <div class="calendar-item">
+                                <div class="calendar-item animate-fly-in" style="animation-delay: 1.6s;">
                                     <h4 class="font-semibold text-gray-700">ITR Filing</h4>
                                     <p class="text-sm text-gray-500">31st July (Individual/Non-Audit)</p>
                                 </div>
@@ -277,10 +331,10 @@
                     <div>
                         <h3 class="text-2xl font-bold text-purple-700 mb-3">3. Other Value-Added Services:</h3>
                         <ul class="list-disc list-inside text-lg text-gray-700 space-y-2 pl-4">
-                            <li>Legal document templates (Term Sheets, Employment Agreements).</li>
-                            <li>Mentorship network access.</li>
-                            <li>Market research insights & reports.</li>
-                            <li>Virtual office solutions & partner discounts.</li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 1.7s;">Legal document templates (Term Sheets, Employment Agreements).</span></li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 1.8s;">Mentorship network access.</span></li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 1.9s;">Market research insights & reports.</span></li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 2.0s;">Virtual office solutions & partner discounts.</span></li>
                         </ul>
                     </div>
                 </div>
@@ -294,17 +348,17 @@
                 </p>
                 <ul class="list-disc list-inside text-lg text-gray-700 space-y-4">
                     <li class="p-2 bg-purple-100 rounded-lg shadow-sm">
-                        <strong class="text-purple-700">Geographic Reach:</strong> <span class="font-semibold">Pan India</span> – Including Metros, Tier 1, 2, and 3 cities, where startup ecosystems are rapidly expanding.
+                        <span class="block animate-fly-in" style="animation-delay: 0.1s;"><strong class="text-purple-700">Geographic Reach:</strong> <span class="font-semibold">Pan India</span> – Including Metros, Tier 1, 2, and 3 cities, where startup ecosystems are rapidly expanding.</span>
                     </li>
                     <li class="p-2 bg-pink-100 rounded-lg shadow-sm">
-                        <strong class="text-pink-700">Startup Stage:</strong>
+                        <span class="block animate-fly-in" style="animation-delay: 0.2s;"><strong class="text-pink-700">Startup Stage:</strong></span>
                         <ul class="list-circle list-inside ml-6 mt-1">
-                            <li><strong class="text-pink-600">Early-Stage (Ideation to Seed):</strong> High need for foundational setup and initial funding guidance.</li>
-                            <li><strong class="text-pink-600">Growth-Stage (Series A onwards):</strong> Requiring advanced compliance, funding round management, and dilution analysis.</li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.3s;"><strong class="text-pink-600">Early-Stage (Ideation to Seed):</strong> High need for foundational setup and initial funding guidance.</span></li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.4s;"><strong class="text-pink-600">Growth-Stage (Series A onwards):</strong> Requiring advanced compliance, funding round management, and dilution analysis.</span></li>
                         </ul>
                     </li>
                     <li class="p-2 bg-blue-100 rounded-lg shadow-sm">
-                        <strong class="text-blue-700">Sector Agnostic:</strong> Our platform supports startups across all industries, from FinTech and HealthTech to E-commerce and Manufacturing.
+                        <span class="block animate-fly-in" style="animation-delay: 0.5s;"><strong class="text-blue-700">Sector Agnostic:</strong> Our platform supports startups across all industries, from FinTech and HealthTech to E-commerce and Manufacturing.</span>
                     </li>
                 </ul>
             </section>
@@ -317,19 +371,19 @@
                 </p>
                 <ul class="list-disc list-inside text-lg text-gray-700 space-y-4">
                     <li class="p-2 bg-emerald-100 rounded-lg shadow-sm">
-                        <strong class="text-emerald-700">Vibrant Startup Ecosystem:</strong> India is the <span class="font-semibold">3rd largest startup ecosystem globally</span>, with over <strong class="font-bold">1.59 lakh DPIIT-recognized startups</strong> as of Jan 2025.
+                        <span class="block animate-fly-in" style="animation-delay: 0.1s;"><strong class="text-emerald-700">Vibrant Startup Ecosystem:</strong> India is the <span class="font-semibold">3rd largest startup ecosystem globally</span>, with over <strong class="font-bold">1.59 lakh DPIIT-recognized startups</strong> as of Jan 2025.</span>
                     </li>
                     <li class="p-2 bg-indigo-100 rounded-lg shadow-sm">
-                        <strong class="text-indigo-700">Strong Growth Trajectory:</strong> The Indian startup ecosystem is expected to grow at a <span class="font-semibold">CAGR of 12-15% annually</span>, projected to more than double by 2030.
+                        <span class="block animate-fly-in" style="animation-delay: 0.2s;"><strong class="text-indigo-700">Strong Growth Trajectory:</strong> The Indian startup ecosystem is expected to grow at a <span class="font-semibold">CAGR of 12-15% annually</span>, projected to more than double by 2030.</span>
                     </li>
                     <li class="p-2 bg-amber-100 rounded-lg shadow-sm">
-                        <strong class="text-amber-700">Annual New Registrations:</strong> While specific real-time "new registrations annually" varies, the ecosystem constantly adds thousands of new entities. Assuming ~<span class="font-semibold">15,000-20,000 new DPIIT recognized startups annually</span> (based on growth trends).
+                        <span class="block animate-fly-in" style="animation-delay: 0.3s;"><strong class="text-amber-700">Annual New Registrations:</strong> While specific real-time "new registrations annually" varies, the ecosystem constantly adds thousands of new entities. Assuming ~<span class="font-semibold">15,000-20,000 new DPIIT recognized startups annually</span> (based on growth trends).</span>
                     </li>
                     <li class="p-2 bg-rose-100 rounded-lg shadow-sm">
-                        <strong class="text-rose-700">Significant Funding Activity:</strong> Indian tech startups raised <span class="font-semibold">US$ 4.1 billion in H1 2024</span>. Early-stage startups alone raised <strong class="font-bold">~$24 million in a recent week</strong> across 8 deals, indicating active capital flow that needs managing.
+                        <span class="block animate-fly-in" style="animation-delay: 0.4s;"><strong class="text-rose-700">Significant Funding Activity:</strong> Indian tech startups raised <span class="font-semibold">US$ 4.1 billion in H1 2024</span>. Early-stage startups alone raised <strong class="font-bold">~$24 million in a recent week</strong> across 8 deals, indicating active capital flow that needs managing.</span>
                     </li>
                     <li class="p-2 bg-sky-100 rounded-lg shadow-sm">
-                        <strong class="text-sky-700">Compliance Market Need:</strong> All startups require ongoing legal and financial compliance, representing a recurring service market. Online compliance services can range from <span class="font-semibold">₹2,000/month to ₹15,000+/year</span>.
+                        <span class="block animate-fly-in" style="animation-delay: 0.5s;"><strong class="text-sky-700">Compliance Market Need:</strong> All startups require ongoing legal and financial compliance, representing a recurring service market. Online compliance services can range from <span class="font-semibold">₹2,000/month to ₹15,000+/year</span>.</span>
                     </li>
                 </ul>
             </section>
@@ -344,26 +398,26 @@
                     <div>
                         <h3 class="text-2xl font-bold text-purple-700 mb-3">1. Subscription Tiers (Platform Access & Tools):</h3>
                         <ul class="list-disc list-inside text-lg text-gray-700 space-y-2 pl-4">
-                            <li><strong>Freemium:</strong> Basic access to name checks, limited calendar.</li>
-                            <li><strong>Standard:</strong> ₹499 - ₹1,999/month for full compliance calendar, basic calculators, templates.</li>
-                            <li><strong>Premium:</strong> ₹2,999 - ₹9,999+/month for advanced calculators, priority support, deeper market insights.</li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.1s;"><strong>Freemium:</strong> Basic access to name checks, limited calendar.</span></li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.2s;"><strong>Standard:</strong> ₹499 - ₹1,999/month for full compliance calendar, basic calculators, templates.</span></li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.3s;"><strong>Premium:</strong> ₹2,999 - ₹9,999+/month for advanced calculators, priority support, deeper market insights.</span></li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold text-purple-700 mb-3">2. Transactional Fees (Per Service):</h3>
                         <ul class="list-disc list-inside text-lg text-gray-700 space-y-2 pl-4">
-                            <li><strong>Startup Registration:</strong> ₹1,500 - ₹10,000+ (excluding government fees) per registration (DPIIT, MCA, other licenses).</li>
-                            <li><strong>Funding Matchmaking Success Fee:</strong> 2-5% of capital raised (similar to crowdfunding platforms, advisory fees can be higher). This is a high-ticket revenue stream.
-                                <br>Illustrative: If we facilitate US$100M in funding per year (a fraction of market), at 3% success fee = US$3 million (₹25 crore) annual revenue.</li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.4s;"><strong>Startup Registration:</strong> ₹1,500 - ₹10,000+ (excluding government fees) per registration (DPIIT, MCA, other licenses).</span></li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.5s;"><strong>Funding Matchmaking Success Fee:</strong> 2-5% of capital raised (similar to crowdfunding platforms, advisory fees can be higher). This is a high-ticket revenue stream.
+                                <br>Illustrative: If we facilitate US$100M in funding per year (a fraction of market), at 3% success fee = US$3 million (₹25 crore) annual revenue.</span></li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold text-purple-700 mb-3">3. Value-Added Services (A-la-carte/Premium):</h3>
                         <ul class="list-disc list-inside text-lg text-gray-700 space-y-2 pl-4">
-                            <li>Legal document templates (Term Sheets, Employment Agreements).</li>
-                            <li>Mentorship network access.</li>
-                            <li>Market research insights & reports.</li>
-                            <li>Virtual office solutions & partner discounts.</li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.6s;">Legal document templates (Term Sheets, Employment Agreements).</span></li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.7s;">Mentorship network access.</span></li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.8s;">Market research insights & reports.</span></li>
+                            <li class="py-1"><span class="block animate-fly-in" style="animation-delay: 0.9s;">Virtual office solutions & partner discounts.</span></li>
                         </ul>
                     </div>
                     <div class="mt-8 pt-6 border-t border-gray-200">
@@ -384,20 +438,20 @@
                 </p>
                 <div class="grid md:grid-cols-2 gap-6 text-lg text-gray-700">
                     <div class="flex items-start bg-purple-100 p-4 rounded-lg shadow-sm">
-                        <svg class="w-8 h-8 text-purple-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 10-4 0v11.597a2 2 0 00.553 1.342l1.26 1.26a1 1 0 001.414 0l1.26-1.26A2 2 0 0013 15.597V4a2 2 0 10-2 0zM4.322 13.916a2 2 0 10-.73 3.013L6 19l-2.322 2.071a1 1 0 00-.062 1.583L5 23h14l.384-.33A1 1 0 0020.062 21.07L18 19l2.408-2.071a2 2 0 10-.73-3.013L15 17h-2l-1-1-1 1H9l-3-3-1.678 1.916z"></path></svg>
-                        <p><strong class="text-purple-700">End-to-End Digital Ecosystem:</strong> From idea validation and registration to funding and ongoing compliance, a single platform for all startup needs.</p>
+                        <span class="block animate-fly-in" style="animation-delay: 0.1s;"><svg class="w-8 h-8 text-purple-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 10-4 0v11.597a2 2 0 00.553 1.342l1.26 1.26a1 1 0 001.414 0l1.26-1.26A2 2 0 0013 15.597V4a2 2 0 10-2 0zM4.322 13.916a2 2 0 10-.73 3.013L6 19l-2.322 2.071a1 1 0 00-.062 1.583L5 23h14l.384-.33A1 1 0 0020.062 21.07L18 19l2.408-2.071a2 2 0 10-.73-3.013L15 17h-2l-1-1-1 1H9l-3-3-1.678 1.916z"></path></svg>
+                        <strong class="text-purple-700">End-to-End Digital Ecosystem:</strong> From idea validation and registration to funding and ongoing compliance, a single platform for all startup needs.</span>
                     </div>
                     <div class="flex items-start bg-teal-100 p-4 rounded-lg shadow-sm">
-                        <svg class="w-8 h-8 text-teal-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.364 1.636l-.707-.707M12 20v-1m-6.364-1.636l-.707.707M18 10a8 8 0 11-16 0 8 8 0 0116 0z"></path></svg>
-                        <p><strong class="text-teal-700">Intelligent Automation & AI:</strong> Leveraging AI for smart matchmaking, predictive compliance alerts, and personalized guidance, minimizing manual effort.</p>
+                        <span class="block animate-fly-in" style="animation-delay: 0.2s;"><svg class="w-8 h-8 text-teal-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.364 1.636l-.707-.707M12 20v-1m-6.364-1.636l-.707.707M18 10a8 8 0 11-16 0 8 8 0 0116 0z"></path></svg>
+                        <strong class="text-teal-700">Intelligent Automation & AI:</strong> Leveraging AI for smart matchmaking, predictive compliance alerts, and personalized guidance, minimizing manual effort.</span>
                     </div>
                     <div class="flex items-start bg-orange-100 p-4 rounded-lg shadow-sm">
-                        <svg class="w-8 h-8 text-orange-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h6a2 2 0 012 2v10a2 2 0 01-2 2h-6a2 2 0 00-2 2v-3m0-3h-2m5-3h.01"></path></svg>
-                        <p><strong class="text-orange-700">Founder-Centric Design:</strong> Built from a founder's perspective, addressing real pain points with intuitive interfaces and actionable insights.</p>
+                        <span class="block animate-fly-in" style="animation-delay: 0.3s;"><svg class="w-8 h-8 text-orange-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h6a2 2 0 012 2v10a2 2 0 01-2 2h-6a2 2 0 00-2 2v-3m0-3h-2m5-3h.01"></path></svg>
+                        <strong class="text-orange-700">Founder-Centric Design:</strong> Built from a founder's perspective, addressing real pain points with intuitive interfaces and actionable insights.</span>
                     </div>
                     <div class="flex items-start bg-lime-100 p-4 rounded-lg shadow-sm">
-                        <svg class="w-8 h-8 text-lime-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        <p><strong class="text-lime-700">Extensive Network & Partnerships:</strong> Access to a curated network of investors, incubators, and legal/financial experts, simplifying connections.</p>
+                        <span class="block animate-fly-in" style="animation-delay: 0.4s;"><svg class="w-8 h-8 text-lime-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        <strong class="text-lime-700">Extensive Network & Partnerships:</strong> Access to a curated network of investors, incubators, and legal/financial experts, simplifying connections.</span>
                     </div>
                 </div>
             </section>
@@ -409,17 +463,17 @@
                     A dedicated team passionate about empowering India's next generation of innovators.
                 </p>
                 <div class="grid md:grid-cols-3 gap-6 text-center">
-                    <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg shadow-sm">
+                    <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg shadow-sm animate-fly-in" style="animation-delay: 0.1s;">
                         <img src="https://placehold.co/120x120/d1d5db/374151?text=Founder" alt="Founder Placeholder" class="rounded-full mb-4 w-32 h-32 object-cover">
                         <h3 class="text-xl font-bold text-gray-800">Founder Name</h3>
                         <p class="text-sm text-gray-600 mt-1">X years as a successful founder, deep understanding of startup pain points.</p>
                     </div>
-                    <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg shadow-sm">
+                    <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg shadow-sm animate-fly-in" style="animation-delay: 0.2s;">
                         <img src="https://placehold.co/120x120/d1d5db/374151?text=CTO" alt="CTO Placeholder" class="rounded-full mb-4 w-32 h-32 object-cover">
                         <h3 class="text-xl font-bold text-gray-800">CTO Name</h3>
                         <p class="text-sm text-gray-600 mt-1">Y years in building scalable SaaS platforms and AI-driven solutions.</p>
                     </div>
-                    <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg shadow-sm">
+                    <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg shadow-sm animate-fly-in" style="animation-delay: 0.3s;">
                         <img src="https://placehold.co/120x120/d1d5db/374151?text=Head+of+Ops" alt="Head of Ops Placeholder" class="rounded-full mb-4 w-32 h-32 object-cover">
                         <h3 class="text-xl font-bold text-gray-800">Head of Operations</h3>
                         <p class="text-sm text-gray-600 mt-1">Z years in legal compliance and financial advisory for businesses.</p>
@@ -452,7 +506,7 @@
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Demo Card: Startup Registration -->
-                    <div class="demo-card">
+                    <div class="demo-card animate-fly-in" style="animation-delay: 0.1s;">
                         <div class="icon-circle">
                             <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
                         </div>
@@ -463,7 +517,7 @@
                     </div>
 
                     <!-- Demo Card: Compliance Calendar -->
-                    <div class="demo-card">
+                    <div class="demo-card animate-fly-in" style="animation-delay: 0.2s;">
                         <div class="icon-circle">
                             <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                         </div>
@@ -474,7 +528,7 @@
                     </div>
 
                     <!-- Demo Card: Dilution Calculator -->
-                    <div class="demo-card">
+                    <div class="demo-card animate-fly-in" style="animation-delay: 0.3s;">
                         <div class="icon-circle">
                             <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m-3 4v8m-3-4h6m-2 4h-.01M12 21a9 9 0 110-18 9 9 0 010 18z"></path></svg>
                         </div>
@@ -491,7 +545,7 @@
                     </div>
 
                     <!-- Demo Card: Name/Brand/Domain Check -->
-                    <div class="demo-card">
+                    <div class="demo-card animate-fly-in" style="animation-delay: 0.4s;">
                         <div class="icon-circle">
                             <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 8a8 8 0 01-8-8H3m8 8a8 8 0 008-8h-1m-10 4h.01M7 10h.01"></path></svg>
                         </div>
@@ -534,18 +588,49 @@
                 event.preventDefault();
             }
 
-            // Hide all slides
-            document.querySelectorAll('.slide-content').forEach(slide => {
+            // Get all slide content sections
+            const allSlides = document.querySelectorAll('.slide-content');
+            
+            // Remove active class and hide all slides
+            allSlides.forEach(slide => {
                 slide.style.display = 'none';
-                slide.classList.remove('active'); // Remove active class as well for consistency
+                slide.classList.remove('active');
+                // Remove animation classes from all child elements as well for clean re-animation
+                slide.querySelectorAll('.animate-fly-in').forEach(el => {
+                    el.classList.remove('animate-fly-in');
+                    el.style.animationDelay = ''; // Clear previous delays
+                });
             });
 
             // Show the requested slide
             const activeSlide = document.getElementById(slideId);
             if (activeSlide) {
                 activeSlide.style.display = 'block';
+                activeSlide.classList.add('active'); // Add active class to trigger overall slide animation
+                
                 // Scroll to the top of the main content area to ensure new slide is visible
                 document.querySelector('main').scrollTop = 0;
+
+                // Apply staggered animations to elements within the new slide
+                let delay = 0.1; // Starting delay for the first item
+                
+                // Target list items within specific sections
+                activeSlide.querySelectorAll('ul.list-disc > li, .demo-card').forEach(item => {
+                    // Check if the item itself should animate or its first child span
+                    const animatableElement = item.querySelector('span.block') || item;
+                    
+                    animatableElement.classList.add('animate-fly-in');
+                    animatableElement.style.animationDelay = `${delay}s`;
+                    delay += 0.1; // Increment delay for next item
+                });
+
+                 // Specific handling for sub-lists to ensure their immediate children animate
+                activeSlide.querySelectorAll('ul.list-circle > li').forEach(item => {
+                     const animatableElement = item.querySelector('span.block') || item;
+                     animatableElement.classList.add('animate-fly-in');
+                     animatableElement.style.animationDelay = `${delay}s`;
+                     delay += 0.1; // Increment delay for next item
+                 });
             }
 
             // Update active state in navigation
