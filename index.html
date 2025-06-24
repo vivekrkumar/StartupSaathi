@@ -7,11 +7,11 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Inter Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f2f5; /* Light gray background */
+            background-color: #eff6ff; /* A lighter, more vibrant blue-50 for a cooler background */
         }
         .slide-content {
             display: none; /* Hide all slides by default */
@@ -62,7 +62,7 @@
             transform: translateY(-5px);
         }
         .icon-circle {
-            background-color: #ede9fe; /* Light purple */
+            background-color: #eef2ff; /* Light indigo/purple for icons */
             border-radius: 50%;
             padding: 1rem;
             margin-bottom: 1rem;
@@ -74,7 +74,14 @@
     <div class="flex flex-1">
         <!-- Sidebar Navigation -->
         <aside class="w-64 bg-white p-6 shadow-lg rounded-r-lg flex flex-col justify-start items-start gap-3 sticky top-0 h-screen overflow-y-auto">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2 w-full">Startup Saathi</h2>
+            <h2 class="text-2xl font-extrabold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2 w-full flex items-center">
+                <svg class="w-8 h-8 mr-2 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L6 12h12L12 2z" />
+                    <path d="M12 12v10" />
+                    <circle cx="12" cy="17" r="3" />
+                </svg>
+                Startup Saathi
+            </h2>
             <nav class="space-y-2 w-full">
                 <a href="#title" class="nav-item flex items-center p-3 rounded-lg text-gray-700 hover:bg-purple-100 hover:text-purple-700 font-medium transition-colors duration-200" onclick="showSlide(event, 'title')">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m0 0l7 7m-2 2v-10a1 1 0 00-1-1h-3m-6 9v-4m0 0h-4m4 0h4m-4 0v4m0 0h-4m4 0h4"></path></svg>
@@ -132,55 +139,61 @@
             <!-- Slide 1: Title Slide -->
             <section id="title" class="slide-content bg-white p-8 rounded-xl shadow-md mb-8 min-h-[calc(100vh-64px)] flex flex-col justify-center items-center text-center">
                 <h1 class="text-5xl font-extrabold text-purple-700 mb-6">Startup Saathi</h1>
-                <p class="text-2xl text-gray-600 italic">Your Digital Partner for Startup Success in India.</p>
+                <p class="text-2xl font-medium text-gray-700 italic">Your Digital Partner for Startup Success in India.</p>
                 <div class="mt-10">
-                    <!-- Placeholder for Logo -->
-                    <img src="https://placehold.co/150x150/e0e0e0/555555?text=Startup+Saathi+Logo" alt="Startup Saathi Logo Placeholder" class="mx-auto rounded-full shadow-lg">
+                    <!-- Startup Saathi Logo SVG -->
+                    <svg class="w-48 h-48 mx-auto text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L6 12h12L12 2z" />
+                        <path d="M12 12v10" />
+                        <circle cx="12" cy="17" r="3" />
+                        <line x1="7" y1="14" x2="17" y2="14" />
+                        <line x1="9" y1="18" x2="15" y2="18" />
+                    </svg>
                 </div>
             </section>
 
             <!-- Slide 2: The Problem -->
             <section id="problem" class="slide-content bg-white p-8 rounded-xl shadow-md mb-8 min-h-[calc(100vh-64px)]">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-red-500 pb-2">The Problem - Navigating the Startup Maze</h2>
+                <h2 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-2 border-red-500 pb-2">The Problem - Navigating the Startup Maze</h2>
                 <p class="text-xl text-gray-700 leading-relaxed mb-6">
                     Indian startups face a multitude of complexities beyond just building a product.
                 </p>
-                <ul class="list-disc list-inside text-lg text-gray-600 space-y-4">
-                    <li class="p-2 bg-red-50 rounded-lg shadow-sm">
+                <ul class="list-disc list-inside text-lg text-gray-700 space-y-4">
+                    <li class="p-2 bg-red-100 rounded-lg shadow-sm">
                         <strong class="text-red-700">Bureaucratic Hurdles:</strong> Complex and time-consuming registration processes across various government bodies.
                     </li>
-                    <li class="p-2 bg-yellow-50 rounded-lg shadow-sm">
-                        <strong class="text-yellow-700">Compliance Overload:</strong> Constant deadlines for GST, IT, PF, and other regulatory filings, leading to penalties if missed.
+                    <li class="p-2 bg-amber-100 rounded-lg shadow-sm">
+                        <strong class="text-amber-700">Compliance Overload:</strong> Constant deadlines for GST, IT, PF, and other regulatory filings, leading to penalties if missed.
                     </li>
-                    <li class="p-2 bg-blue-50 rounded-lg shadow-sm">
+                    <li class="p-2 bg-blue-100 rounded-lg shadow-sm">
                         <strong class="text-blue-700">Funding Gap & Dilution Fears:</strong> Difficulty identifying the right investors and understanding complex capital raise structures and equity dilution.
                     </li>
-                    <li class="p-2 bg-green-50 rounded-lg shadow-sm">
-                        <strong class="text-green-700">Lack of Centralized Guidance:</strong> No single platform for all essential non-core business needs, from ideation to funding.
+                    <li class="p-2 bg-emerald-100 rounded-lg shadow-sm">
+                        <strong class="text-emerald-700">Lack of Centralized Guidance:</strong> No single platform for all essential non-core business needs, from ideation to funding.
                     </li>
                 </ul>
             </section>
 
             <!-- Slide 3: The Solution -->
             <section id="solution" class="slide-content bg-white p-8 rounded-xl shadow-md mb-8 min-h-[calc(100vh-64px)]">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">The Solution - Startup Saathi: Your All-in-One Startup OS</h2>
+                <h2 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">The Solution - Startup Saathi: Your All-in-One Startup OS</h2>
                 <p class="text-xl text-gray-700 leading-relaxed mb-6">
                     An intelligent, integrated platform empowering Indian startups from incorporation to funding and beyond.
                 </p>
-                <div class="grid md:grid-cols-2 gap-6 text-lg text-gray-600">
-                    <div class="flex items-center bg-purple-50 p-4 rounded-lg shadow-sm">
+                <div class="grid md:grid-cols-2 gap-6 text-lg text-gray-700">
+                    <div class="flex items-center bg-purple-100 p-4 rounded-lg shadow-sm">
                         <svg class="w-8 h-8 text-purple-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         <p><strong class="text-purple-700">Simplified Registration:</strong> Streamlined process for all essential startup registrations.</p>
                     </div>
-                    <div class="flex items-center bg-teal-50 p-4 rounded-lg shadow-sm">
+                    <div class="flex items-center bg-teal-100 p-4 rounded-lg shadow-sm">
                         <svg class="w-8 h-8 text-teal-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0h.01M12 12h9.22c.28 0 .5-.22.5-.5V5.264l-.65-.376A7.003 7.003 0 0012 2a7.003 7.003 0 00-8.57 3.882L3 5.264V12.5c0 .28.22.5.5.5H12z"></path></svg>
                         <p><strong class="text-teal-700">Intelligent Funding Matchmaking:</strong> Connecting startups with the right investors based on tailored criteria.</p>
                     </div>
-                    <div class="flex items-center bg-orange-50 p-4 rounded-lg shadow-sm">
+                    <div class="flex items-center bg-orange-100 p-4 rounded-lg shadow-sm">
                         <svg class="w-8 h-8 text-orange-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V5a2 2 0 012-2h6a2 2 0 012 2v10a2 2 0 01-2 2h-6a2 2 0 00-2 2v-3m0-3h-2m5-3h.01"></path></svg>
                         <p><strong class="text-orange-700">Automated Compliance Management:</strong> Dynamic calendar and alerts for all regulatory filings.</p>
                     </div>
-                    <div class="flex items-center bg-lime-50 p-4 rounded-lg shadow-sm">
+                    <div class="flex items-center bg-lime-100 p-4 rounded-lg shadow-sm">
                         <svg class="w-8 h-8 text-lime-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5A2.5 2.5 0 005 7.5c0 .67.333 1.258.85 1.653M12 6.253C13.168 5.477 14.754 5 16.5 5A2.5 2.5 0 0119 7.5c0 .67-.333 1.258-.85-1.653m-1.336 1.336c-.714.535-1.547.95-2.433 1.196m-9.363 1.096c.714.535 1.547.95 2.433 1.196m-1.006.106C7.832 14.477 9.246 15 10.5 15A2.5 2.5 0 0013 12.5c0-.67-.333-1.258-.85-1.653m-1.336 1.336c.714.535 1.547.95 2.433 1.196m-9.363 1.096c.714.535 1.547.95 2.433 1.196"></path></svg>
                         <p><strong class="text-lime-700">Value-Added Services:</strong> Tools and resources for comprehensive startup management.</p>
                     </div>
@@ -189,28 +202,28 @@
 
             <!-- Slide 4: Core Services -->
             <section id="core-services" class="slide-content bg-white p-8 rounded-xl shadow-md mb-8 min-h-[calc(100vh-64px)]">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">Core Services</h2>
+                <h2 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">Core Services</h2>
                 <p class="text-xl text-gray-700 leading-relaxed mb-6">
                     Startup Saathi simplifies your journey with essential digital services:
                 </p>
                 <div class="space-y-6">
                     <div>
-                        <h3 class="text-2xl font-semibold text-purple-700 mb-3">1. Startup Registration & Compliance:</h3>
-                        <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 pl-4">
+                        <h3 class="text-2xl font-bold text-purple-700 mb-3">1. Startup Registration & Compliance:</h3>
+                        <ul class="list-disc list-inside text-lg text-gray-700 space-y-2 pl-4">
                             <li>Tech platform for company registration (Pvt Ltd, LLP), DPIIT recognition.</li>
                             <li>Name, Brand, Domain, and Bank Account Availability Checks.</li>
                             <li>Assistance with Sector-specific and State-specific registrations.</li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-semibold text-purple-700 mb-3">2. Intellectual Property & Brand Checks:</h3>
-                        <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 pl-4">
+                        <h3 class="text-2xl font-bold text-purple-700 mb-3">2. Intellectual Property & Brand Checks:</h3>
+                        <ul class="list-disc list-inside text-lg text-gray-700 space-y-2 pl-4">
                             <li>Comprehensive checks for trademark, domain, and brand name availability to secure your identity.</li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-semibold text-purple-700 mb-3">3. Capital Allocation Guidance:</h3>
-                        <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 pl-4">
+                        <h3 class="text-2xl font-bold text-purple-700 mb-3">3. Capital Allocation Guidance:</h3>
+                        <ul class="list-disc list-inside text-lg text-gray-700 space-y-2 pl-4">
                             <li>Tools and resources for strategic capital deployment within your startup.</li>
                         </ul>
                     </div>
@@ -219,14 +232,14 @@
 
             <!-- Slide 5: Funding & Compliance Hub -->
             <section id="funding-matchmaking" class="slide-content bg-white p-8 rounded-xl shadow-md mb-8 min-h-[calc(100vh-64px)]">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">Funding & Compliance Hub</h2>
+                <h2 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">Funding & Compliance Hub</h2>
                 <p class="text-xl text-gray-700 leading-relaxed mb-6">
                     Connecting you to capital and keeping you compliant.
                 </p>
                 <div class="space-y-6">
                     <div>
-                        <h3 class="text-2xl font-semibold text-purple-700 mb-3">1. Intelligent Funding Matchmaking:</h3>
-                        <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 pl-4">
+                        <h3 class="text-2xl font-bold text-purple-700 mb-3">1. Intelligent Funding Matchmaking:</h3>
+                        <ul class="list-disc list-inside text-lg text-gray-700 space-y-2 pl-4">
                             <li>Matching startups with relevant investors (Govt. funds, State Govt. schemes, Incubators, Angels, VCs) based on:
                                 <ul class="list-circle list-inside ml-6 mt-1">
                                     <li>Nature of Startup (Sector, Innovation)</li>
@@ -238,8 +251,8 @@
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-semibold text-purple-700 mb-3">2. Dynamic Compliance Calendar:</h3>
-                        <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 pl-4">
+                        <h3 class="text-2xl font-bold text-purple-700 mb-3">2. Dynamic Compliance Calendar:</h3>
+                        <ul class="list-disc list-inside text-lg text-gray-700 space-y-2 pl-4">
                             <li>Personalized, automated reminders for all critical filing dates: GST, Income Tax, PF, ESIC, ROC, and other sector/state-specific regulations.</li>
                             <li><div class="calendar-grid mt-4">
                                 <div class="calendar-item">
@@ -262,8 +275,8 @@
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-semibold text-purple-700 mb-3">3. Other Value-Added Services:</h3>
-                        <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 pl-4">
+                        <h3 class="text-2xl font-bold text-purple-700 mb-3">3. Other Value-Added Services:</h3>
+                        <ul class="list-disc list-inside text-lg text-gray-700 space-y-2 pl-4">
                             <li>Legal document templates (Term Sheets, Employment Agreements).</li>
                             <li>Mentorship network access.</li>
                             <li>Market research insights & reports.</li>
@@ -275,22 +288,22 @@
 
             <!-- Slide 6: Target Market -->
             <section id="target-market" class="slide-content bg-white p-8 rounded-xl shadow-md mb-8 min-h-[calc(100vh-64px)]">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">Our Target Market</h2>
+                <h2 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">Our Target Market</h2>
                 <p class="text-xl text-gray-700 leading-relaxed mb-6">
                     Empowering all startups across India, from ideation to growth.
                 </p>
-                <ul class="list-disc list-inside text-lg text-gray-600 space-y-4">
-                    <li class="p-2 bg-purple-50 rounded-lg shadow-sm">
+                <ul class="list-disc list-inside text-lg text-gray-700 space-y-4">
+                    <li class="p-2 bg-purple-100 rounded-lg shadow-sm">
                         <strong class="text-purple-700">Geographic Reach:</strong> <span class="font-semibold">Pan India</span> – Including Metros, Tier 1, 2, and 3 cities, where startup ecosystems are rapidly expanding.
                     </li>
-                    <li class="p-2 bg-pink-50 rounded-lg shadow-sm">
+                    <li class="p-2 bg-pink-100 rounded-lg shadow-sm">
                         <strong class="text-pink-700">Startup Stage:</strong>
                         <ul class="list-circle list-inside ml-6 mt-1">
                             <li><strong class="text-pink-600">Early-Stage (Ideation to Seed):</strong> High need for foundational setup and initial funding guidance.</li>
                             <li><strong class="text-pink-600">Growth-Stage (Series A onwards):</strong> Requiring advanced compliance, funding round management, and dilution analysis.</li>
                         </ul>
                     </li>
-                    <li class="p-2 bg-blue-50 rounded-lg shadow-sm">
+                    <li class="p-2 bg-blue-100 rounded-lg shadow-sm">
                         <strong class="text-blue-700">Sector Agnostic:</strong> Our platform supports startups across all industries, from FinTech and HealthTech to E-commerce and Manufacturing.
                     </li>
                 </ul>
@@ -298,55 +311,55 @@
 
             <!-- Slide 7: Market Opportunity & Size -->
             <section id="market-opportunity" class="slide-content bg-white p-8 rounded-xl shadow-md mb-8 min-h-[calc(100vh-64px)]">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">Market Opportunity & Size</h2>
+                <h2 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">Market Opportunity & Size</h2>
                 <p class="text-xl text-gray-700 leading-relaxed mb-6">
                     Addressing a rapidly expanding, multi-billion dollar startup support market.
                 </p>
-                <ul class="list-disc list-inside text-lg text-gray-600 space-y-4">
-                    <li class="p-2 bg-green-50 rounded-lg shadow-sm">
-                        <strong class="text-green-700">Vibrant Startup Ecosystem:</strong> India is the <span class="font-semibold">3rd largest startup ecosystem globally</span>, with **over 1.59 lakh DPIIT-recognized startups** as of Jan 2025.
+                <ul class="list-disc list-inside text-lg text-gray-700 space-y-4">
+                    <li class="p-2 bg-emerald-100 rounded-lg shadow-sm">
+                        <strong class="text-emerald-700">Vibrant Startup Ecosystem:</strong> India is the <span class="font-semibold">3rd largest startup ecosystem globally</span>, with over <strong class="font-bold">1.59 lakh DPIIT-recognized startups</strong> as of Jan 2025.
                     </li>
-                    <li class="p-2 bg-indigo-50 rounded-lg shadow-sm">
+                    <li class="p-2 bg-indigo-100 rounded-lg shadow-sm">
                         <strong class="text-indigo-700">Strong Growth Trajectory:</strong> The Indian startup ecosystem is expected to grow at a <span class="font-semibold">CAGR of 12-15% annually</span>, projected to more than double by 2030.
                     </li>
-                    <li class="p-2 bg-yellow-50 rounded-lg shadow-sm">
-                        <strong class="text-yellow-700">Annual New Registrations:</strong> While specific real-time "new registrations annually" varies, the ecosystem constantly adds thousands of new entities. Assuming ~<span class="font-semibold">15,000-20,000 new DPIIT recognized startups annually</span> (based on growth trends).
+                    <li class="p-2 bg-amber-100 rounded-lg shadow-sm">
+                        <strong class="text-amber-700">Annual New Registrations:</strong> While specific real-time "new registrations annually" varies, the ecosystem constantly adds thousands of new entities. Assuming ~<span class="font-semibold">15,000-20,000 new DPIIT recognized startups annually</span> (based on growth trends).
                     </li>
-                    <li class="p-2 bg-red-50 rounded-lg shadow-sm">
-                        <strong class="text-red-700">Significant Funding Activity:</strong> Indian tech startups raised <span class="font-semibold">US$ 4.1 billion in H1 2024</span>. Early-stage startups alone raised **~$24 million in a recent week** across 8 deals, indicating active capital flow that needs managing.
+                    <li class="p-2 bg-rose-100 rounded-lg shadow-sm">
+                        <strong class="text-rose-700">Significant Funding Activity:</strong> Indian tech startups raised <span class="font-semibold">US$ 4.1 billion in H1 2024</span>. Early-stage startups alone raised <strong class="font-bold">~$24 million in a recent week</strong> across 8 deals, indicating active capital flow that needs managing.
                     </li>
-                    <li class="p-2 bg-blue-50 rounded-lg shadow-sm">
-                        <strong class="text-blue-700">Compliance Market Need:</strong> All startups require ongoing legal and financial compliance, representing a recurring service market. Online compliance services can range from <span class="font-semibold">₹2,000/month to ₹15,000+/year</span>.
+                    <li class="p-2 bg-sky-100 rounded-lg shadow-sm">
+                        <strong class="text-sky-700">Compliance Market Need:</strong> All startups require ongoing legal and financial compliance, representing a recurring service market. Online compliance services can range from <span class="font-semibold">₹2,000/month to ₹15,000+/year</span>.
                     </li>
                 </ul>
             </section>
 
             <!-- Slide 8: Revenue Model & Projections -->
             <section id="revenue-model" class="slide-content bg-white p-8 rounded-xl shadow-md mb-8 min-h-[calc(100vh-64px)]">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">Revenue Model & Projections (Illustrative)</h2>
+                <h2 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">Revenue Model & Projections (Illustrative)</h2>
                 <p class="text-xl text-gray-700 leading-relaxed mb-6">
                     A multi-tiered model capturing value at every stage of a startup's lifecycle.
                 </p>
                 <div class="space-y-6">
                     <div>
-                        <h3 class="text-2xl font-semibold text-purple-700 mb-3">1. Subscription Tiers (Platform Access & Tools):</h3>
-                        <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 pl-4">
-                            <li>**Freemium:** Basic access to name checks, limited calendar.</li>
+                        <h3 class="text-2xl font-bold text-purple-700 mb-3">1. Subscription Tiers (Platform Access & Tools):</h3>
+                        <ul class="list-disc list-inside text-lg text-gray-700 space-y-2 pl-4">
+                            <li><strong>Freemium:</strong> Basic access to name checks, limited calendar.</li>
                             <li><strong>Standard:</strong> ₹499 - ₹1,999/month for full compliance calendar, basic calculators, templates.</li>
                             <li><strong>Premium:</strong> ₹2,999 - ₹9,999+/month for advanced calculators, priority support, deeper market insights.</li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-semibold text-purple-700 mb-3">2. Transactional Fees (Per Service):</h3>
-                        <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 pl-4">
-                            <li><strong>Startup Registration:</strong> ₹1,500 - ₹10,000+ (excl. govt. fees) per registration (DPIIT, MCA, other licenses).</li>
+                        <h3 class="text-2xl font-bold text-purple-700 mb-3">2. Transactional Fees (Per Service):</h3>
+                        <ul class="list-disc list-inside text-lg text-gray-700 space-y-2 pl-4">
+                            <li><strong>Startup Registration:</strong> ₹1,500 - ₹10,000+ (excluding government fees) per registration (DPIIT, MCA, other licenses).</li>
                             <li><strong>Funding Matchmaking Success Fee:</strong> 2-5% of capital raised (similar to crowdfunding platforms, advisory fees can be higher). This is a high-ticket revenue stream.
                                 <br>Illustrative: If we facilitate US$100M in funding per year (a fraction of market), at 3% success fee = US$3 million (₹25 crore) annual revenue.</li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-semibold text-purple-700 mb-3">3. Value-Added Services (A-la-carte/Premium):</h3>
-                        <ul class="list-disc list-inside text-lg text-gray-600 space-y-2 pl-4">
+                        <h3 class="text-2xl font-bold text-purple-700 mb-3">3. Value-Added Services (A-la-carte/Premium):</h3>
+                        <ul class="list-disc list-inside text-lg text-gray-700 space-y-2 pl-4">
                             <li>Legal document templates (Term Sheets, Employment Agreements).</li>
                             <li>Mentorship network access.</li>
                             <li>Market research insights & reports.</li>
@@ -357,7 +370,7 @@
                         <h3 class="text-2xl font-bold text-purple-700 mb-3">Total Illustrative Annual Revenue Potential:</h3>
                         <p class="text-3xl font-extrabold text-green-700">₹75 - ₹150+ Crore (approx. US$9 - US$18+ Million)</p>
                         <p class="text-sm text-gray-500 mt-2">
-                            *This projection is based on capturing a reasonable market share of new startups for registration, a portion of the total funding facilitated, and a growing subscriber base for recurring services. It does not include all potential value-added service revenues.*
+                            This projection is based on capturing a reasonable market share of new startups for registration, a portion of the total funding facilitated, and a growing subscriber base for recurring services. It does not include all potential value-added service revenues.
                         </p>
                     </div>
                 </div>
@@ -365,24 +378,24 @@
 
             <!-- Slide 9: Our Competitive Advantage -->
             <section id="competitive-advantage" class="slide-content bg-white p-8 rounded-xl shadow-md mb-8 min-h-[calc(100vh-64px)]">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">Our Competitive Advantage</h2>
+                <h2 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">Our Competitive Advantage</h2>
                 <p class="text-xl text-gray-700 leading-relaxed mb-6">
                     Why Startup Saathi is the indispensable partner for Indian founders.
                 </p>
-                <div class="grid md:grid-cols-2 gap-6 text-lg text-gray-600">
-                    <div class="flex items-start bg-purple-50 p-4 rounded-lg shadow-sm">
+                <div class="grid md:grid-cols-2 gap-6 text-lg text-gray-700">
+                    <div class="flex items-start bg-purple-100 p-4 rounded-lg shadow-sm">
                         <svg class="w-8 h-8 text-purple-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 10-4 0v11.597a2 2 0 00.553 1.342l1.26 1.26a1 1 0 001.414 0l1.26-1.26A2 2 0 0013 15.597V4a2 2 0 10-2 0zM4.322 13.916a2 2 0 10-.73 3.013L6 19l-2.322 2.071a1 1 0 00-.062 1.583L5 23h14l.384-.33A1 1 0 0020.062 21.07L18 19l2.408-2.071a2 2 0 10-.73-3.013L15 17h-2l-1-1-1 1H9l-3-3-1.678 1.916z"></path></svg>
                         <p><strong class="text-purple-700">End-to-End Digital Ecosystem:</strong> From idea validation and registration to funding and ongoing compliance, a single platform for all startup needs.</p>
                     </div>
-                    <div class="flex items-start bg-teal-50 p-4 rounded-lg shadow-sm">
+                    <div class="flex items-start bg-teal-100 p-4 rounded-lg shadow-sm">
                         <svg class="w-8 h-8 text-teal-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.364 1.636l-.707-.707M12 20v-1m-6.364-1.636l-.707.707M18 10a8 8 0 11-16 0 8 8 0 0116 0z"></path></svg>
                         <p><strong class="text-teal-700">Intelligent Automation & AI:</strong> Leveraging AI for smart matchmaking, predictive compliance alerts, and personalized guidance, minimizing manual effort.</p>
                     </div>
-                    <div class="flex items-start bg-orange-50 p-4 rounded-lg shadow-sm">
+                    <div class="flex items-start bg-orange-100 p-4 rounded-lg shadow-sm">
                         <svg class="w-8 h-8 text-orange-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h6a2 2 0 012 2v10a2 2 0 01-2 2h-6a2 2 0 00-2 2v-3m0-3h-2m5-3h.01"></path></svg>
                         <p><strong class="text-orange-700">Founder-Centric Design:</strong> Built from a founder's perspective, addressing real pain points with intuitive interfaces and actionable insights.</p>
                     </div>
-                    <div class="flex items-start bg-lime-50 p-4 rounded-lg shadow-sm">
+                    <div class="flex items-start bg-lime-100 p-4 rounded-lg shadow-sm">
                         <svg class="w-8 h-8 text-lime-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         <p><strong class="text-lime-700">Extensive Network & Partnerships:</strong> Access to a curated network of investors, incubators, and legal/financial experts, simplifying connections.</p>
                     </div>
@@ -391,24 +404,24 @@
 
             <!-- Slide 10: Our Team & Expertise -->
             <section id="team" class="slide-content bg-white p-8 rounded-xl shadow-md mb-8 min-h-[calc(100vh-64px)]">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">Our Team & Expertise</h2>
+                <h2 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">Our Team & Expertise</h2>
                 <p class="text-xl text-gray-700 leading-relaxed mb-6">
                     A dedicated team passionate about empowering India's next generation of innovators.
                 </p>
                 <div class="grid md:grid-cols-3 gap-6 text-center">
                     <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg shadow-sm">
                         <img src="https://placehold.co/120x120/d1d5db/374151?text=Founder" alt="Founder Placeholder" class="rounded-full mb-4 w-32 h-32 object-cover">
-                        <h3 class="text-xl font-semibold text-gray-800">Founder Name</h3>
+                        <h3 class="text-xl font-bold text-gray-800">Founder Name</h3>
                         <p class="text-sm text-gray-600 mt-1">X years as a successful founder, deep understanding of startup pain points.</p>
                     </div>
                     <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg shadow-sm">
                         <img src="https://placehold.co/120x120/d1d5db/374151?text=CTO" alt="CTO Placeholder" class="rounded-full mb-4 w-32 h-32 object-cover">
-                        <h3 class="text-xl font-semibold text-gray-800">CTO Name</h3>
+                        <h3 class="text-xl font-bold text-gray-800">CTO Name</h3>
                         <p class="text-sm text-gray-600 mt-1">Y years in building scalable SaaS platforms and AI-driven solutions.</p>
                     </div>
                     <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg shadow-sm">
                         <img src="https://placehold.co/120x120/d1d5db/374151?text=Head+of+Ops" alt="Head of Ops Placeholder" class="rounded-full mb-4 w-32 h-32 object-cover">
-                        <h3 class="text-xl font-semibold text-gray-800">Head of Operations</h3>
+                        <h3 class="text-xl font-bold text-gray-800">Head of Operations</h3>
                         <p class="text-sm text-gray-600 mt-1">Z years in legal compliance and financial advisory for businesses.</p>
                     </div>
                 </div>
@@ -420,7 +433,7 @@
                 <p class="text-2xl text-gray-700 leading-relaxed mb-8">
                     <strong class="text-purple-600">Our Vision:</strong> To be the definitive operating system for every startup in India, accelerating growth and simplifying complexities.
                 </p>
-                <p class="text-3xl font-semibold text-green-600 mb-10">
+                <p class="text-3xl font-extrabold text-green-700 mb-10">
                     Empowering Indian innovation, one startup at a time.
                 </p>
                 <div class="text-xl text-gray-700">
@@ -432,7 +445,7 @@
 
             <!-- Demo Slide -->
             <section id="demo" class="slide-content bg-white p-8 rounded-xl shadow-md mb-8 min-h-[calc(100vh-64px)]">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">Startup Saathi: Short Demo</h2>
+                <h2 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">Startup Saathi: Short Demo</h2>
                 <p class="text-xl text-gray-700 leading-relaxed mb-8">
                     Experience a glimpse of our intuitive platform and powerful tools.
                 </p>
@@ -443,8 +456,8 @@
                         <div class="icon-circle">
                             <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Simplified Registration Flow</h3>
-                        <p class="text-gray-600 text-sm mb-4">Walk through our easy 3-step company registration process.</p>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Simplified Registration Flow</h3>
+                        <p class="text-gray-700 text-sm mb-4">Walk through our easy 3-step company registration process.</p>
                         <img src="https://placehold.co/280x180/f3e8ff/6b21a8?text=Registration+Flow" alt="Registration Flow Prototype" class="w-full h-auto rounded-lg shadow-md mb-4">
                         <button class="px-4 py-2 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors">Start Registration</button>
                     </div>
@@ -454,8 +467,8 @@
                         <div class="icon-circle">
                             <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Dynamic Compliance Calendar</h3>
-                        <p class="text-gray-600 text-sm mb-4">Never miss a deadline with personalized alerts.</p>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Dynamic Compliance Calendar</h3>
+                        <p class="text-gray-700 text-sm mb-4">Never miss a deadline with personalized alerts.</p>
                         <img src="https://placehold.co/280x180/e0e0e0/333333?text=Compliance+Calendar" alt="Compliance Calendar Prototype" class="w-full h-auto rounded-lg shadow-md mb-4">
                         <button class="px-4 py-2 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors">View Calendar</button>
                     </div>
@@ -465,13 +478,13 @@
                         <div class="icon-circle">
                             <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m-3 4v8m-3-4h6m-2 4h-.01M12 21a9 9 0 110-18 9 9 0 010 18z"></path></svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Equity Dilution Calculator</h3>
-                        <p class="text-gray-600 text-sm mb-4">Understand the impact of new funding rounds on your ownership.</p>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Equity Dilution Calculator</h3>
+                        <p class="text-gray-700 text-sm mb-4">Understand the impact of new funding rounds on your ownership.</p>
                         <div class="w-full space-y-2 text-left">
                             <label class="block text-gray-700 text-sm">Current Equity %:</label>
-                            <input type="number" value="100" class="w-full p-2 border rounded-md">
+                            <input type="number" value="100" class="w-full p-2 border border-gray-300 rounded-md">
                             <label class="block text-gray-700 text-sm">New Investment (% of Co.):</label>
-                            <input type="number" value="20" class="w-full p-2 border rounded-md">
+                            <input type="number" value="20" class="w-full p-2 border border-gray-300 rounded-md">
                             <p class="text-sm font-semibold mt-2">Est. New Equity: <span class="text-green-600">80%</span></p>
                         </div>
                         <button class="px-4 py-2 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors mt-4">Calculate Dilution</button>
@@ -482,11 +495,11 @@
                         <div class="icon-circle">
                             <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 8a8 8 0 01-8-8H3m8 8a8 8 0 008-8h-1m-10 4h.01M7 10h.01"></path></svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Name/Brand/Domain Check</h3>
-                        <p class="text-gray-600 text-sm mb-4">Verify availability instantly across multiple platforms.</p>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Name/Brand/Domain Check</h3>
+                        <p class="text-gray-700 text-sm mb-4">Verify availability instantly across multiple platforms.</p>
                         <div class="w-full space-y-2 text-left">
                             <label class="block text-gray-700 text-sm">Proposed Name:</label>
-                            <input type="text" placeholder="e.g., InnovateHub" class="w-full p-2 border rounded-md">
+                            <input type="text" placeholder="e.g., InnovateHub" class="w-full p-2 border border-gray-300 rounded-md">
                             <p class="text-sm font-semibold mt-2">Status: <span class="text-green-600">Available!</span></p>
                         </div>
                         <button class="px-4 py-2 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors mt-4">Check Availability</button>
@@ -502,7 +515,7 @@
                 <p class="text-2xl text-gray-700 leading-relaxed mb-8">
                     <strong class="text-purple-600">Our Vision:</strong> To be the definitive operating system for every startup in India, accelerating growth and simplifying complexities.
                 </p>
-                <p class="text-3xl font-semibold text-green-600 mb-10">
+                <p class="text-3xl font-extrabold text-green-700 mb-10">
                     Empowering Indian innovation, one startup at a time.
                 </p>
                 <div class="text-xl text-gray-700">
@@ -554,4 +567,3 @@
     </script>
 </body>
 </html>
-
