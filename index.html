@@ -139,16 +139,21 @@
 </head>
 <body class="flex flex-col min-h-screen">
     <!-- Top Navigation Bar -->
-    <header class="bg-black text-orange-400 p-4 shadow-lg flex items-center justify-between sticky top-0 z-10">
-        <div class="flex items-center">
-            <svg class="w-8 h-8 mr-2 text-orange-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2L6 12h12L12 2z" />
-                <path d="M12 12v10" />
-                <circle cx="12" cy="17" r="3" />
-            </svg>
-            <h1 class="text-2xl font-extrabold">Startup Saathi</h1>
+    <header class="bg-black text-orange-400 p-4 shadow-lg sticky top-0 z-10">
+        <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center">
+                <svg class="w-8 h-8 mr-2 text-orange-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L6 12h12L12 2z" />
+                    <path d="M12 12v10" />
+                    <circle cx="12" cy="17" r="3" />
+                </svg>
+                <h1 class="text-2xl font-extrabold">Startup Saathi</h1>
+            </div>
+            <div class="text-lg font-semibold">
+                Welcome, <span class="text-orange-300">Founder Jane!</span>
+            </div>
         </div>
-        <nav class="flex space-x-4 overflow-x-auto pb-2 sm:pb-0">
+        <nav class="flex space-x-4 overflow-x-auto pb-2 sm:pb-0 justify-center">
             <a href="#dashboard" class="nav-item flex-shrink-0 flex items-center p-2 rounded-lg text-orange-400 hover:bg-orange-500 hover:text-black font-medium transition-colors duration-200" onclick="showSection(event, 'dashboard')">
                 <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m0 0l7 7m-2 2v-10a1 1 0 00-1-1h-3m-6 9v-4m0 0h-4m4 0h4m-4 0v4m0 0h-4m4 0h4"></path></svg>
                 Dashboard
@@ -169,9 +174,13 @@
                 <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 8a8 8 0 01-8-8H3m8 8a8 8 0 008-8h-1m-10 4h.01M7 10h.01"></path></svg>
                 IP & Branding
             </a>
+            <a href="#team-management" class="nav-item flex-shrink-0 flex items-center p-2 rounded-lg text-orange-400 hover:bg-orange-500 hover:text-black font-medium transition-colors duration-200" onclick="showSection(event, 'team-management')">
+                <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h2a2 2 0 002-2V7a2 2 0 00-2-2h-2V3a1 1 0 00-1-1H8a1 1 0 00-1 1v2H5a2 2 0 00-2 2v11a2 2 0 002 2h2m0 0l-2 2m2-2l2 2m-2-2v2"></path></svg>
+                Team Mgmt
+            </a>
             <a href="#equity-simulator" class="nav-item flex-shrink-0 flex items-center p-2 rounded-lg text-orange-400 hover:bg-orange-500 hover:text-black font-medium transition-colors duration-200" onclick="showSection(event, 'equity-simulator')">
                 <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 18a.5.5 0 00.75.5L9 16m-3-9h10.334C19.1 7 20 7.9 20 9v9.667c0 .9-.9 1.333-1.666.923l-7-3.667m-3.992-1.424L3 13.5V11a2 2 0 012-2h6zm-2 4h4m-4 4h4"></path></svg>
-                Equity Simulator
+                Equity Sim
             </a>
             <a href="#govt-funding" class="nav-item flex-shrink-0 flex items-center p-2 rounded-lg text-orange-400 hover:bg-orange-500 hover:text-black font-medium transition-colors duration-200" onclick="showSection(event, 'govt-funding')">
                 <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0h.01M12 12h9.22c.28 0 .5-.22.5-.5V5.264l-.65-.376A7.003 7003 0 0012 2a7.003 7003 0 00-8.57 3.882L3 5.264V12.5c0 .28.22.5.5.5H12z"></path></svg>
@@ -211,7 +220,7 @@
                     <h3 class="text-xl font-bold text-gray-800 mb-2">Compliance Status</h3>
                     <p class="text-sm text-gray-700 mb-4">Stay on top of your regulatory filings.</p>
                     <p class="text-2xl font-bold text-green-600 mb-4">All Clear!</p>
-                    <button class="btn-primary" onclick="showSection(event, 'company-registration')">Check Registrations</button>
+                    <button class="btn-primary" onclick="showSection(event, 'company-registration')">Check Registifications</button>
                 </div>
                 <div class="tool-card animate-fly-in" style="animation-delay: 0.3s;">
                     <div class="text-6xl text-blue-500 mb-4">💰</div>
@@ -794,6 +803,66 @@
             </ul>
         </section>
 
+        <!-- Team Management Section -->
+        <section id="team-management" class="portal-section bg-white p-8 rounded-xl shadow-md mb-8 min-h-[calc(100vh-64px)]">
+            <h2 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-2 border-orange-500 pb-2">Team Management & Access Control</h2>
+            <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                Invite and manage your team members, and control their access to your startup's content.
+            </p>
+
+            <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-inner animate-fly-in" style="animation-delay: 0.1s;">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Add New Team Member</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label for="new-member-name" class="block text-gray-700 text-sm font-medium mb-1">Full Name:</label>
+                        <input type="text" id="new-member-name" class="input-field" placeholder="John Doe">
+                    </div>
+                    <div>
+                        <label for="new-member-email" class="block text-gray-700 text-sm font-medium mb-1">Email:</label>
+                        <input type="email" id="new-member-email" class="input-field" placeholder="john.doe@example.com">
+                    </div>
+                    <div>
+                        <label for="new-member-role" class="block text-gray-700 text-sm font-medium mb-1">Role:</label>
+                        <input type="text" id="new-member-role" class="input-field" placeholder="Co-founder, Advisor, Intern">
+                    </div>
+                    <div>
+                        <label for="new-member-access" class="block text-gray-700 text-sm font-medium mb-1">Default Access:</label>
+                        <select id="new-member-access" class="input-field">
+                            <option value="viewer">Viewer</option>
+                            <option value="editor">Editor</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn-primary" onclick="addTeamMember()">Add Member</button>
+            </div>
+
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 mt-8 border-b border-gray-200 pb-2">Current Team Members</h3>
+            <div id="team-members-list" class="space-y-4">
+                <!-- Example Team Member (will be dynamically added/removed) -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-gray-100 rounded-lg shadow-sm animate-fly-in" style="animation-delay: 0.1s;">
+                    <div>
+                        <p class="font-bold text-gray-800">Founder Jane</p>
+                        <p class="text-sm text-gray-600">jane.founder@example.com <span class="font-semibold text-orange-600">(Admin)</span></p>
+                    </div>
+                    <div class="mt-3 sm:mt-0 flex items-center space-x-2">
+                        <button class="text-blue-600 hover:text-blue-800" onclick="alert('Simulating: Edit access permissions for Founder Jane. This would open a detailed modal to set granular access for sections (Concept Builder, Registration, etc.) and specific files/folders.')">Manage Access</button>
+                        <button class="text-red-600 hover:text-red-800" onclick="removeTeamMember('jane.founder@example.com')">Remove</button>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-gray-100 rounded-lg shadow-sm animate-fly-in" style="animation-delay: 0.2s;">
+                    <div>
+                        <p class="font-bold text-gray-800">John Doe</p>
+                        <p class="text-sm text-gray-600">john.doe@example.com <span class="font-semibold text-gray-600">(Editor)</span></p>
+                    </div>
+                    <div class="mt-3 sm:mt-0 flex items-center space-x-2">
+                        <button class="text-blue-600 hover:text-blue-800" onclick="alert('Simulating: Edit access permissions for John Doe. This would open a detailed modal to set granular access for sections (Concept Builder, Registration, etc.) and specific files/folders.')">Manage Access</button>
+                        <button class="text-red-600 hover:text-red-800" onclick="removeTeamMember('john.doe@example.com')">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Equity & Dilution Simulator Section -->
         <section id="equity-simulator" class="portal-section bg-white p-8 rounded-xl shadow-md mb-8 min-h-[calc(100vh-64px)]">
             <h2 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-2 border-orange-500 pb-2">Equity & Dilution Simulator</h2>
@@ -1051,6 +1120,12 @@
     </div>
 
     <script>
+        // Store team members in an array (simulated state)
+        let teamMembers = [
+            { name: 'Founder Jane', email: 'jane.founder@example.com', role: 'Admin', access: 'admin' },
+            { name: 'John Doe', email: 'john.doe@example.com', role: 'Product Manager', access: 'editor' }
+        ];
+
         // --- Core Navigation Logic ---
         function showSection(event, sectionId) {
             if (event) event.preventDefault(); // Prevent default anchor link behavior
@@ -1084,6 +1159,10 @@
                 // Special handling for Concept Builder tabs to ensure initial tab is active
                 if (sectionId === 'concept-builder') {
                     showConceptTab(null, 'problem'); // Default to problem tab
+                }
+                // Special handling for Team Management to render members
+                if (sectionId === 'team-management') {
+                    renderTeamMembers();
                 }
             }
 
@@ -1353,6 +1432,84 @@
             }
 
             resultsDiv.innerHTML = `<h3 class="text-xl font-bold text-gray-800 mb-4">Potential Investor Matches:</h3><div class="space-y-4">${resultsHtml}</div>`;
+        }
+
+        // --- Team Management Functions ---
+        function renderTeamMembers() {
+            const teamListDiv = document.getElementById('team-members-list');
+            teamListDiv.innerHTML = ''; // Clear existing list
+
+            if (teamMembers.length === 0) {
+                teamListDiv.innerHTML = '<p class="text-gray-600">No team members added yet. Add your first member above!</p>';
+                return;
+            }
+
+            teamMembers.forEach((member, index) => {
+                const memberDiv = document.createElement('div');
+                memberDiv.className = 'flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-gray-100 rounded-lg shadow-sm animate-fly-in';
+                memberDiv.style.animationDelay = `${0.1 * index}s`;
+                memberDiv.innerHTML = `
+                    <div>
+                        <p class="font-bold text-gray-800">${member.name}</p>
+                        <p class="text-sm text-gray-600">${member.email} <span class="font-semibold text-orange-600">(${member.access.charAt(0).toUpperCase() + member.access.slice(1)})</span></p>
+                    </div>
+                    <div class="mt-3 sm:mt-0 flex items-center space-x-2">
+                        <button class="text-blue-600 hover:text-blue-800" onclick="alert('Simulating: Edit access permissions for ${member.name}. This would open a detailed modal to set granular access for sections (Concept Builder, Registration, etc.) and specific files/folders.')">Manage Access</button>
+                        <button class="text-red-600 hover:text-red-800" onclick="removeTeamMember('${member.email}')">Remove</button>
+                    </div>
+                `;
+                teamListDiv.appendChild(memberDiv);
+            });
+        }
+
+        function addTeamMember() {
+            const nameInput = document.getElementById('new-member-name');
+            const emailInput = document.getElementById('new-member-email');
+            const roleInput = document.getElementById('new-member-role');
+            const accessInput = document.getElementById('new-member-access');
+
+            const name = nameInput.value.trim();
+            const email = emailInput.value.trim();
+            const role = roleInput.value.trim();
+            const access = accessInput.value;
+
+            if (!name || !email || !role) {
+                alert('Please fill in all member details (Name, Email, Role).');
+                return;
+            }
+            if (!email.includes('@') || !email.includes('.')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            if (teamMembers.some(member => member.email === email)) {
+                alert('A member with this email already exists.');
+                return;
+            }
+
+            const newMember = { name, email, role, access };
+            teamMembers.push(newMember);
+            renderTeamMembers(); // Re-render the list
+
+            // Clear form
+            nameInput.value = '';
+            emailInput.value = '';
+            roleInput.value = '';
+            accessInput.value = 'viewer'; // Reset to default
+            alert(`${name} added successfully!`);
+        }
+
+        function removeTeamMember(emailToRemove) {
+            // In a real app, you'd confirm this action
+            if (confirm(`Are you sure you want to remove ${emailToRemove} from the team?`)) {
+                const initialLength = teamMembers.length;
+                teamMembers = teamMembers.filter(member => member.email !== emailToRemove);
+                if (teamMembers.length < initialLength) {
+                    renderTeamMembers(); // Re-render the list
+                    alert(`${emailToRemove} removed.`);
+                } else {
+                    alert(`Could not find ${emailToRemove}.`);
+                }
+            }
         }
 
 
